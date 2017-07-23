@@ -24,28 +24,28 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-    await client.change_presence( game=discord.Game( name= 'h!help'))
+    await client.change_presence( game=discord.Game( name= '.mhelp'))
 @client.event
 async def on_message(message):
     random_color = colors()
  #   if message.content.startswith('=ok'):
      #   await client.send_message(message.channel,'ok')
-    if message.content.startswith('h!help'):
+    if message.content.startswith('.mhelp'):
         await client.send_message(message.channel,"""```
-__________________________________________
+..........................................
 |Commands       |    Usage               |
-+---------------+------------------------+
-|1.h!user       | info about msgauthor.  |
-|2.h!user <tag> | info about tagged user.|
-|3.h!say <text> | repeats your words.    |
-------------------------------------------
- Hibiki <text> to talk c:        
- More to come soon c:```""")
-    elif message.content.startswith('h!user'):
++=-=-=-=-=-=--=-+-=-=-=-=-=-=-=-=-=-=-=-=+
+|.muser         | info about msgauthor.  |
+|.muser <tag>   | info about tagged user.|
+|.msay <text>   | repeats your words.    |
+''''''''''''''''''''''''''''''''''''''''''
+ Masamune <text> to talk ;D        
+ More to come soon ;D```""")
+    elif message.content.startswith('.muser'):
         try:
             if message.channel.id !='274387797140570112':
                 coloursman = int(random_color['color'])
-                if message.content == 'h!user':
+                if message.content == '.muser':
                     discord.Member = None
                     author = message.author
                     if not discord.Member :
@@ -80,7 +80,7 @@ __________________________________________
            
            
                 else:
-                    check_tagger = re.findall('h!user\s(.*)',message.content)
+                    check_tagger = re.findall('.muser\s(.*)',message.content)
         
                     hilol_ = ' '.join(check_tagger)
                     no1is = re.sub(r'[^\w]', ' ', hilol_)
@@ -117,10 +117,10 @@ __________________________________________
         except Exception as e: print (str(e))
     
     
-    elif message.content.startswith('Hibiki'):  
-        if message.content == 'Hibiki':return
+    elif message.content.startswith('Masamune'):  
+        if message.content == 'Masamune':return
         else:
-            text = re.findall('Hibiki\s(.*)',message.content)
+            text = re.findall('Masamune\s(.*)',message.content)
             refined = ' '.join(text)
             near_done = refined
             lower_them = near_done.lower()
@@ -130,12 +130,12 @@ __________________________________________
             await client.send_message(message.channel,new)
                   
     elif message.content.startswith('h!say'):
-        if message.content == 'h!say':return
+        if message.content == '.msay':return
         else:
-            text = re.findall('h!say\s(.*)',message.content)
+            text = re.findall('.msay\s(.*)',message.content)
             refined = ' '.join(text)
             await client.send_message(message.channel, '{0}'.format(refined))
                             
 
 print('Starting....')
-client.run('MzMzMDgxMjEyMDY1Mjg0MDk2.DEIi6w.JCNGkZ0PTyENoCQkB3uMyZ_J9kc')
+client.run('MzMzNjAxMzE1OTY1ODk0NjU2.DFDCrw.RPxweTa0q8ANnfU-lEIAcvpCfDk')
